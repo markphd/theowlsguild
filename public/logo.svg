@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="262px" height="358px" viewBox="0 0 262 358" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group Copy 4</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="99.5383523%" id="linearGradient-1">
+            <stop stop-color="#0445B2" offset="0%"></stop>
+            <stop stop-color="#3A01FA" offset="100%"></stop>
+        </linearGradient>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#000046" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-13.237237%" y1="-35.2780987%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#000000" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="115.296327%" id="linearGradient-5">
+            <stop stop-color="#FF7300" offset="0%"></stop>
+            <stop stop-color="#FEFF2E" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-Copy-8" transform="translate(-110.000000, -119.000000)">
+            <g id="Group-Copy-4" transform="translate(110.000000, 119.000000)">
+                <ellipse id="Oval-Copy" fill="url(#linearGradient-1)" filter="url(#filter-2)" cx="132" cy="171" rx="113" ry="131"></ellipse>
+                <g id="nine9" fill="url(#linearGradient-3)" fill-rule="nonzero">
+                    <path d="M262,236.682971 L262,142 L200.956594,142 L200.956594,236.682971 C200.956594,272.646506 169.130421,301.896724 130,301.896724 L130,358 C203.043424,357.520357 262,303.814875 262,236.682971 Z M0,181.039775 C0,248.527636 58.9565734,302.517814 132,303 L132,246.599316 C92.8695753,246.599316 61.0434035,217.19404 61.0434035,181.039775 L61.0434035,142 L0,142 L0,181.039775 Z M132,20 C58.9565778,20 0.521650067,74.4901673 0,142 L61.0434081,142 C61.0434081,105.834003 92.8695823,76.4189043 132,76.4189043 L132,20 Z M132,0 C58.9565778,0 0.521650067,58.9565745 0,132 L61.0434081,132 C61.0434081,92.869577 92.8695823,61.0434046 132,61.0434046 L132,0 Z M130,20 L130,76.4190185 C169.130421,76.4190185 200.956594,105.833853 200.956594,142 L262,142 C261.47835,74.4900724 203.043424,20 130,20 Z" id="Shape"></path>
+                </g>
+                <path d="M0,181.039775 C0,248.527636 58.9565734,302.517814 132,303 L132,246.599316 C92.8695753,246.599316 61.0434035,217.19404 61.0434035,181.039775 L61.0434035,142 L0,142 L0,181.039775 Z" id="Path-Copy-2" fill-rule="nonzero"></path>
+                <circle id="Oval" stroke="url(#linearGradient-5)" stroke-width="21" fill="url(#linearGradient-4)" cx="123" cy="173" r="39.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
