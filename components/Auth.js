@@ -39,15 +39,7 @@ export default function Auth() {
   return (
     <div className="row flex flex-center">
       <div className="col-6 form-widget">
-        <div>
-          {/* <input
-            className="inputField"
-            type="email"
-            placeholder="Your email"
-            value={email}
-            
-          /> */}
-
+        <p>
           <label>Select player</label>
           <select id="player-select" onChange={(e) => setUser(e.target.value)}>
             <option value="brownWoodOwl">Brown Wood Owl</option>
@@ -57,7 +49,7 @@ export default function Auth() {
             <option value="powerfulOwl">Powerful Owl</option>
             <option value="main">Test</option>
           </select>
-        </div>
+        </p>
         <div>
           <button
             onClick={(e) => {
