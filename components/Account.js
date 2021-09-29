@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../utils/supabaseClient";
+import Store from "store";
 
 export default function Account({ session }) {
   const [loading, setLoading] = useState(true);
@@ -23,8 +24,12 @@ export default function Account({ session }) {
   ];
 
   useEffect(() => {
+    if (Store.get("online") === undefined) {
+      Store.set("online", playing);
+    }
+
     getProfile();
-  }, [session]);
+  }, [session, playing]);
 
   async function getProfile() {
     try {
@@ -58,7 +63,10 @@ export default function Account({ session }) {
   async function togglePlay({ username }) {
     try {
       setLoading(true);
+
       setPlaying(!playing);
+      Store.set("online", !playing);
+
       const user = supabase.auth.user();
       fetch("https://ipapi.co/json/", {
         method: "GET",
@@ -148,7 +156,20 @@ export default function Account({ session }) {
         />
       </p> */}
       <p>
-        <label htmlFor="play">Play game</label>
+        <label htmlFor="play">Axie Terms</label>
+        <ul className="terms">
+          <li>you can only play on on one account in any 24-hour period. </li>
+          <li>
+            {" "}
+            you will not manipulate the energy system, such as gifting Axies to
+            make use of more energy
+          </li>
+          <li> you will not login another Axie team not authorized by TOG</li>
+          <li>
+            {" "}
+            you will not manipulate the device timezone to speed up energy reset
+          </li>
+        </ul>
       </p>
 
       {/* <pre>
@@ -203,6 +224,7 @@ export default function Account({ session }) {
           className="button block primary"
           onClick={() => togglePlay({ username })}
           disabled={loading}
+          data-playing={playing}
         >
           {playing ? "End game" : "Start game"}
 

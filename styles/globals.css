@@ -15,3 +15,11 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+.terms {
+  font-size: 0.7em;
+}
+
+button[data-playing="true"] {
+  background-color: orangered;
+}
