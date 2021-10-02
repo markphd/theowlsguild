@@ -8,20 +8,20 @@ export default function Account({ session }) {
   const [username, setUsername] = useState(null);
   const [website, setWebsite] = useState(null);
   const [avatar_url, setAvatarUrl] = useState(null);
-  const [quote, setQuote] = useState(0);
+  // const [quote, setQuote] = useState(0);
 
-  const quotes = [
-    "An inch forward today will make a foot of a difference tomorrow -Aly El-Ganzouri",
-    "Whatever the mind can conceive and believe, it can achieve -Napoleon Hill",
-    "Impossible is just a big word thrown around by small men who find it easier to live in the world they've been given than to explore the power they have to change it. Impossible is not a fact. It's an opinion. Impossible is not a declaration. It's a dare. Impossible is potential. Impossible is temporary. Impossible is nothing. -Muhammad Ali",
-    "You can fail at what you don't want, so you might as well take a chance at doing what you love -Jim Carrey",
-    "It is better to be prepared for an opportunity and not have one, than to have an opportunity and not be prepared -Whitney Young, Jr.",
-    "Take advantage of the opportunity of a lifetime, in the lifetime of the opportunity. -Eric Thomas",
-    "Work in silence, let the success make the noise -Frank Ocean",
-    "On the one hand, we all want to be happy. On the other hand, we all know the things that make us happy. But we don't do those things. Why? Simple. We are too busy. Too busy doing what? Too busy trying to be happy. -Matthew Kelly",
-    "There is nothing to fear, because I cannot fail - only learn, grow, and become better than I've ever been before -Hal Elrod",
-    "Pain is temporary. It may last a minute, or an hour, or a day, or a year, but eventually it will subside and something else will take its place. If I quit however, it lasts forever. -Lance Armstrong",
-  ];
+  // const quotes = [
+  //   "An inch forward today will make a foot of a difference tomorrow -Aly El-Ganzouri",
+  //   "Whatever the mind can conceive and believe, it can achieve -Napoleon Hill",
+  //   "Impossible is just a big word thrown around by small men who find it easier to live in the world they've been given than to explore the power they have to change it. Impossible is not a fact. It's an opinion. Impossible is not a declaration. It's a dare. Impossible is potential. Impossible is temporary. Impossible is nothing. -Muhammad Ali",
+  //   "You can fail at what you don't want, so you might as well take a chance at doing what you love -Jim Carrey",
+  //   "It is better to be prepared for an opportunity and not have one, than to have an opportunity and not be prepared -Whitney Young, Jr.",
+  //   "Take advantage of the opportunity of a lifetime, in the lifetime of the opportunity. -Eric Thomas",
+  //   "Work in silence, let the success make the noise -Frank Ocean",
+  //   "On the one hand, we all want to be happy. On the other hand, we all know the things that make us happy. But we don't do those things. Why? Simple. We are too busy. Too busy doing what? Too busy trying to be happy. -Matthew Kelly",
+  //   "There is nothing to fear, because I cannot fail - only learn, grow, and become better than I've ever been before -Hal Elrod",
+  //   "Pain is temporary. It may last a minute, or an hour, or a day, or a year, but eventually it will subside and something else will take its place. If I quit however, it lasts forever. -Lance Armstrong",
+  // ];
 
   useEffect(() => {
     if (Store.get("online") === undefined) {
@@ -145,7 +145,7 @@ export default function Account({ session }) {
       <p>
         <h3>Hi {username}</h3>
       </p>
-      <blockquote>{quotes[(Math.random() * 10) | quote]}</blockquote>
+      {/* <blockquote>{quotes[(Math.random() * 10) | quote]}</blockquote> */}
       {/* <p>
         <label htmlFor="username">Name</label>
         <input
