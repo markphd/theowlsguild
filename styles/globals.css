@@ -1,3 +1,9 @@
+body {
+  background-color: #051b3f;
+  /* background-color: #f1ac0c; */
+  color: white;
+}
+
 .brand {
   display: flex;
   justify-content: left;
@@ -7,13 +13,22 @@
   margin: 0;
 }
 
+#player-select {
+  text-align: center;
+  padding: 1em 3em;
+}
+
 .logo {
-  height: 10rem;
-  width: 7rem;
+  height: 7rem;
+  width: 100%;
   margin-right: 1rem;
-  background-image: url("/logo.svg");
+  background-image: url("/tog-logo.png");
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+label {
+  color: #82a0bf;
 }
 
 .terms {

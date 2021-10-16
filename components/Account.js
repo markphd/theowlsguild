@@ -100,8 +100,6 @@ export default function Account({ session }) {
           if (error) {
             throw error;
           }
-
-          console.log(info);
         })
         .catch((err) => {
           console.error(err);
@@ -143,7 +141,7 @@ export default function Account({ session }) {
   return (
     <div className="form-widget">
       <p>
-        <h3>Hi {username}</h3>
+        <h3>Hello {username}</h3>
       </p>
       {/* <blockquote>{quotes[(Math.random() * 10) | quote]}</blockquote> */}
       {/* <p>

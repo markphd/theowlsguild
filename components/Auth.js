@@ -12,7 +12,7 @@ export default function Auth() {
       { name: "greatHornedOwl", email: "gfperez.0711@gmail.com" },
       { name: "powerfulOwl", email: "dota2kudds@gmail.com" },
       { name: "brownWoodOwl", email: "malsibjhay@gmail.com" },
-      { name: "main", email: "mark@forloop.me" },
+      { name: "main", email: "guild@theowls.quest" },
     ];
     const playerEmail = users.filter((u) => u.name === user);
     setEmail(playerEmail[0].email);
@@ -47,7 +47,7 @@ export default function Auth() {
             <option value="greatGreyOwl">Great Grey Owl</option>
             <option value="greatHornedOwl">Great Horned Owl</option>
             <option value="powerfulOwl">Powerful Owl</option>
-            <option value="main">Test</option>
+            <option value="main">Admin</option>
           </select>
         </p>
         <div>
@@ -59,7 +59,7 @@ export default function Auth() {
             className="button block"
             disabled={loading}
           >
-            <span>{loading ? "Loading" : "Welcome"}</span>
+            <span>{loading ? "Loading" : "Login"}</span>
           </button>
         </div>
       </div>

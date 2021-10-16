@@ -18,15 +18,17 @@ export default function Home() {
     <div className="container" style={{ padding: "50px 0 100px 0" }}>
       <div className="brand">
         <div className="logo"></div>
-        <h1 className="header">
-          The <br />
-          Owls
-          <br /> Guild
-        </h1>
+        {/* <h1 className="header">Portal</h1> */}
       </div>
-      <p className="description">An army of owls login portal</p>
       {!session ? (
-        <Auth />
+        <>
+          <h1 className="header">A new adventure awaits</h1>
+          <p className="description">
+            Choose the Axie team assigned to you. An email with a login link
+            will follow.
+          </p>
+          <Auth />
+        </>
       ) : (
         <Account key={session.user.id} session={session} />
       )}
