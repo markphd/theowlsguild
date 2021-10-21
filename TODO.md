@@ -35,7 +35,7 @@ Create Manager Portal
 
 ### Get Address Data:
 
-https://game-api.skymavis.com/game-api/clients/ronin:418aa3d84ccab621f60bdd3e8bdd4061619d294f/items/1
+https://game-api.skymavis.com/game-api/clients/ronin:436c6c586034ba8b070373c9da5873df3ccde9db/items/1
 
 <pre>
 { 
@@ -56,4 +56,26 @@ https://game-api.skymavis.com/game-api/clients/ronin:418aa3d84ccab621f60bdd3e8bd
   "updated_at":1576669291,
   "created_at":1576669291}
 }
+</pre>
+
+<pre>
+  fetch("https://game-api.skymavis.com/game-api/clients/0x0300435252c760e1410d0616bd1f5252147abc38/items/1", {
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "en-US,en;q=0.9",
+    "cache-control": "no-cache",
+    "pragma": "no-cache",
+    "sec-ch-ua": "\"Chromium\";v=\"94\", \"Google Chrome\";v=\"94\", \";Not A Brand\";v=\"99\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"macOS\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "cross-site"
+  },
+  "referrer": "https://marketplace.axieinfinity.com/",
+  "referrerPolicy": "strict-origin-when-cross-origin",
+  "body": null,
+  "method": "GET",
+  "mode": "cors"
+});
 </pre>

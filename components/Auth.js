@@ -9,15 +9,15 @@ export default function Auth() {
     const users = [
       { name: "elfOwl", email: "ellicecalulo@gmail.com" },
       { name: "greatGreyOwl", email: "ryancanonizado20@gmail.com" },
-      { name: "greatHornedOwl", email: "gfperez.0711@gmail.com" },
-      { name: "powerfulOwl", email: "dota2kudds@gmail.com" },
+      { name: "greatHornedOwl", email: "dota2kudds@gmail.com" },
+      { name: "powerfulOwl", email: "ernielcerbito@gmail.com" },
       { name: "brownWoodOwl", email: "malsibjhay@gmail.com" },
+      { name: "rockEagleOwl", email: "rcanonizad09@gmail.com" },
+      { name: "australPygmyOwl", email: "anthonggaquino129@gmail.com" },
       { name: "main", email: "guild@theowls.quest" },
     ];
     const playerEmail = users.filter((u) => u.name === user);
     setEmail(playerEmail[0].email);
-
-    console.log(email, "EMAIL 2");
   };
 
   const handleLogin = async (email) => {
@@ -42,6 +42,7 @@ export default function Auth() {
         <p>
           <label>Select player</label>
           <select id="player-select" onChange={(e) => setUser(e.target.value)}>
+            <option value="australPygmyOwl">Austral Pygmy Owl</option>
             <option value="brownWoodOwl">Brown Wood Owl</option>
             <option value="elfOwl">Elf Owl</option>
             <option value="greatGreyOwl">Great Grey Owl</option>

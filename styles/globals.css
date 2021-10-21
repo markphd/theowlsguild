@@ -18,13 +18,21 @@ body {
   padding: 1em 3em;
 }
 
+th {
+  color: #ffc433;
+}
+
 .logo {
   height: 7rem;
   width: 100%;
   margin-right: 1rem;
-  background-image: url("/tog-logo.png");
+  background-image: url("/tog-logo.jpg");
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.name {
+  text-transform: capitalize;
 }
 
 label {

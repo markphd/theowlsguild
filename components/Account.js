@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../utils/supabaseClient";
 import Store from "store";
+import Scholar from "./Scholar";
 
 export default function Account({ session }) {
   const [loading, setLoading] = useState(true);
@@ -23,11 +24,50 @@ export default function Account({ session }) {
   //   "Pain is temporary. It may last a minute, or an hour, or a day, or a year, but eventually it will subside and something else will take its place. If I quit however, it lasts forever. -Lance Armstrong",
   // ];
 
+  const scholars = {
+    players: [
+      {
+        name: "dan",
+        address: "0x436c6c586034ba8b070373c9da5873df3ccde9db",
+        alias: "Powerful Owl",
+      },
+      {
+        name: "rodel",
+        address: "0x524de36943a744431d17b816151710793ae4b7ee",
+        alias: "Great Horned Owl",
+      },
+      {
+        name: "ryan",
+        address: "0x0300435252c760e1410d0616bd1f5252147abc38",
+        alias: "Great Grey Owl",
+      },
+      {
+        name: "ellice",
+        address: "0x4feb4da58271cb0131fcc66aacb67716c430a1b7",
+        alias: "Elf Owl",
+      },
+      {
+        name: "bj",
+        address: "0x8f8b368660c1b5a496387bafaf88d49ee30d3826",
+        alias: "Brown Wood Owl",
+      },
+      {
+        name: "rica",
+        address: "0x8e4f19f3792315636d5a15a880043498698f6fb5",
+        alias: "Rock Eagle Owl",
+      },
+      {
+        name: "anthony",
+        address: "0x585b5ebc1629689903ad19287c929c75ef067528",
+        alias: "Austral Pygmy Owl",
+      },
+    ],
+  };
+
   useEffect(() => {
     if (Store.get("online") === undefined) {
       Store.set("online", playing);
     }
-
     getProfile();
   }, [session, playing]);
 
@@ -36,7 +76,7 @@ export default function Account({ session }) {
       setLoading(true);
       const user = supabase.auth.user();
 
-      console.log(user);
+      // console.log(user);
 
       let { data, error, status } = await supabase
         .from("profiles")
@@ -140,35 +180,48 @@ export default function Account({ session }) {
 
   return (
     <div className="form-widget">
-      <p>
-        <h3>Hello {username}</h3>
-      </p>
-      {/* <blockquote>{quotes[(Math.random() * 10) | quote]}</blockquote> */}
-      {/* <p>
-        <label htmlFor="username">Name</label>
-        <input
-          id="username"
-          type="text"
-          value={username || ""}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </p> */}
-      <p>
-        <label htmlFor="play">Axie Terms</label>
-        <ul className="terms">
-          <li>you can only play on on one account in any 24-hour period. </li>
-          <li>
-            {" "}
-            you will not manipulate the energy system, such as gifting Axies to
-            make use of more energy
-          </li>
-          <li> you will not login another Axie team not authorized by TOG</li>
-          <li>
-            {" "}
-            you will not manipulate the device timezone to speed up energy reset
-          </li>
-        </ul>
-      </p>
+      <h3>{!loading && `Hello ${username}`} </h3>
+      {!loading && username !== "Manager" ? (
+        <>
+          <label htmlFor="play">Axie Terms</label>
+          <ul className="terms">
+            <li>you can only play on on one account in any 24-hour period. </li>
+            <li>
+              {" "}
+              you will not manipulate the energy system, such as gifting Axies
+              to make use of more energy
+            </li>
+            <li> you will not login another Axie team not authorized by TOG</li>
+            <li>
+              {" "}
+              you will not manipulate the device timezone to speed up energy
+              reset
+            </li>
+          </ul>
+        </>
+      ) : null}
+
+      <table>
+        <thead>
+          <tr>
+            <th colSpan="1">Team</th>
+            <th colSpan="1">Scholars</th>
+            <th colSpan="1">Total SLP</th>
+            <th colSpan="1">Claim Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {!loading &&
+            scholars.players.map((player) => (
+              <Scholar
+                name={player.name}
+                address={player.address}
+                alias={player.alias}
+                key={Math.random(23)}
+              />
+            ))}
+        </tbody>
+      </table>
 
       {/* <pre>
         (6) you will not use the Site, the App, and the Smart Contracts for any{" "}
