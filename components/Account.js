@@ -198,30 +198,43 @@ export default function Account({ session }) {
               reset
             </li>
           </ul>
-        </>
-      ) : null}
 
-      <table>
-        <thead>
-          <tr>
-            <th colSpan="1">Team</th>
-            <th colSpan="1">Scholars</th>
-            <th colSpan="1">Total SLP</th>
-            <th colSpan="1">Claim Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {!loading &&
-            scholars.players.map((player) => (
-              <Scholar
-                name={player.name}
-                address={player.address}
-                alias={player.alias}
-                key={Math.random(23)}
-              />
-            ))}
-        </tbody>
-      </table>
+          <p>
+            <button
+              className="button block primary"
+              onClick={() => togglePlay({ username })}
+              disabled={loading}
+              data-playing={playing}
+            >
+              {playing ? "End game" : "Start game"}
+
+              {console.log(playing)}
+            </button>
+          </p>
+        </>
+      ) : (
+        <table>
+          <thead>
+            <tr>
+              <th colSpan="1">Team</th>
+              <th colSpan="1">Scholars</th>
+              <th colSpan="1">Total SLP</th>
+              <th colSpan="1">Claim Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {!loading &&
+              scholars.players.map((player) => (
+                <Scholar
+                  name={player.name}
+                  address={player.address}
+                  alias={player.alias}
+                  key={Math.random(23)}
+                />
+              ))}
+          </tbody>
+        </table>
+      )}
 
       {/* <pre>
         (6) you will not use the Site, the App, and the Smart Contracts for any{" "}
@@ -269,19 +282,6 @@ export default function Account({ session }) {
         <br />
         https://axieinfinity.com/terms/
       </pre> */}
-
-      <p>
-        <button
-          className="button block primary"
-          onClick={() => togglePlay({ username })}
-          disabled={loading}
-          data-playing={playing}
-        >
-          {playing ? "End game" : "Start game"}
-
-          {console.log(playing)}
-        </button>
-      </p>
 
       {/* <p>
         <button

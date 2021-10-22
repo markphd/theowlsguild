@@ -78,7 +78,11 @@ export default function Scholar(player) {
 
   return (
     <tr key={Math.random(23)}>
-      <td>{player.alias}</td>
+      <td>
+        <a href={`https://explorer.roninchain.com/address/${player.address}`}>
+          {player.alias} ↗
+        </a>
+      </td>
       <td className="name">{player.name}</td>
       <td>{stats?.total}</td>
       <td>{stats?.days} </td>
