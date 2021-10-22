@@ -48,7 +48,7 @@ export default function Auth() {
             <option value="greatGreyOwl">Great Grey Owl</option>
             <option value="greatHornedOwl">Great Horned Owl</option>
             <option value="powerfulOwl">Powerful Owl</option>
-            <option value="rockEagleOwl">rcanonizad09@gmail.com</option>
+            <option value="rockEagleOwl">Rock Eagle Owl</option>
             <option value="main">Admin</option>
           </select>
         </p>
