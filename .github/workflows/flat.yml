@@ -1,0 +1,63 @@
+name: data
+on:
+  schedule:
+    - cron: 0 0 * * *
+  workflow_dispatch: {}
+  push:
+    paths:
+      - .github/workflows/flat.yml
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup deno
+        uses: denoland/setup-deno@main
+        with:
+          deno-version: v1.x
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://game-api.skymavis.com/game-api/clients/0x436c6c586034ba8b070373c9da5873df3ccde9db/items/1
+          downloaded_filename: powerful-owl.json
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://game-api.skymavis.com/game-api/clients/0x524de36943a744431d17b816151710793ae4b7ee/items/1
+          downloaded_filename: great-horned-owl.json
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://game-api.skymavis.com/game-api/clients/0x0300435252c760e1410d0616bd1f5252147abc38/items/1
+          downloaded_filename: great-grey-owl.json
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://game-api.skymavis.com/game-api/clients/0x4feb4da58271cb0131fcc66aacb67716c430a1b7/items/1
+          downloaded_filename: elf-owl.json
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://game-api.skymavis.com/game-api/clients/0x8f8b368660c1b5a496387bafaf88d49ee30d3826/items/1
+          downloaded_filename: brown-wood-owl.json
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://game-api.skymavis.com/game-api/clients/0x8e4f19f3792315636d5a15a880043498698f6fb5/items/1
+          downloaded_filename: rock-eagle-owl.json
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://game-api.skymavis.com/game-api/clients/0x585b5ebc1629689903ad19287c929c75ef067528/items/1
+          downloaded_filename: austral-pygmy-owl.json
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://game-api.skymavis.com/game-api/clients/0x81393ebd5a70d8a299a41c425df1bafe113e71dd/items/1
+          downloaded_filename: northern-hawk-owl.json
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://game-api.skymavis.com/game-api/clients/0x50f822bbd2b7b8af05d0a1de428f5dbabf04aa52/items/1
+          downloaded_filename: jungle-owlet.json
