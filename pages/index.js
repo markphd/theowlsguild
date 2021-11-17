@@ -37,9 +37,13 @@ export default function Home() {
       <div className="brand">
         <div className="logo"></div>
         {/* <h1 className="header">Portal</h1> */}
-        <button className="admin-button" onClick={() => handleAdminLogin()}>
-          Admin Portal
-        </button>
+        {!session ? (
+          <button className="admin-button" onClick={() => handleAdminLogin()}>
+            Admin Portal
+          </button>
+        ) : (
+          <></>
+        )}
       </div>
       {!session ? (
         <>
