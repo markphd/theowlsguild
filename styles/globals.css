@@ -7,11 +7,16 @@ body {
 .brand {
   display: flex;
   justify-content: left;
+  align-items: center;
 }
 
 .brand > h1 {
   margin: 0;
 }
+
+/* .brand > button {
+  transform: scale(0.5em);
+} */
 
 #player-select {
   text-align: center;
@@ -29,6 +34,12 @@ th {
   background-image: url("/tog-logo.jpg");
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.admin-button {
+  min-width: 9rem;
+  background-color: #b98400;
+  color: #031b3d;
 }
 
 .name {

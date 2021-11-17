@@ -1,24 +1,10 @@
 import { useState } from "react";
 import { supabase } from "../utils/supabaseClient";
+import players from "../data/players.json";
 
 export default function Auth() {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
-
-  const setUser = (user) => {
-    const users = [
-      { name: "elfOwl", email: "ellicecalulo@gmail.com" },
-      { name: "greatGreyOwl", email: "ryancanonizado20@gmail.com" },
-      { name: "greatHornedOwl", email: "dota2kudds@gmail.com" },
-      { name: "powerfulOwl", email: "ernielcerbito@gmail.com" },
-      { name: "brownWoodOwl", email: "malsibjhay@gmail.com" },
-      { name: "rockEagleOwl", email: "rcanonizad09@gmail.com" },
-      { name: "australPygmyOwl", email: "anthonggaquino129@gmail.com" },
-      { name: "main", email: "guild@theowls.quest" },
-    ];
-    const playerEmail = users.filter((u) => u.name === user);
-    setEmail(playerEmail[0].email);
-  };
 
   const handleLogin = async (email) => {
     try {
@@ -34,22 +20,17 @@ export default function Auth() {
     }
   };
 
-  console.log(email, "EMAIL");
-
   return (
     <div className="row flex flex-center">
       <div className="col-6 form-widget">
         <p>
           <label>Select player</label>
-          <select id="player-select" onChange={(e) => setUser(e.target.value)}>
-            <option value="australPygmyOwl">Austral Pygmy Owl</option>
-            <option value="brownWoodOwl">Brown Wood Owl</option>
-            <option value="elfOwl">Elf Owl</option>
-            <option value="greatGreyOwl">Great Grey Owl</option>
-            <option value="greatHornedOwl">Great Horned Owl</option>
-            <option value="powerfulOwl">Powerful Owl</option>
-            <option value="rockEagleOwl">Rock Eagle Owl</option>
-            <option value="main">Admin</option>
+          <select id="player-select" onChange={(e) => setEmail(e.target.value)}>
+            {players.map((player) => (
+              <option key={player.alias} value={player.email}>
+                {player.alias}
+              </option>
+            ))}
           </select>
         </p>
         <div>

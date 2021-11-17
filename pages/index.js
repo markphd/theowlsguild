@@ -15,6 +15,20 @@ export default function Home() {
     });
   }, []);
 
+  const handleAdminLogin = async () => {
+    try {
+      console.log("FIRED");
+      const { error } = await supabase.auth.signIn({
+        email: "guild@theowls.quest",
+      });
+      if (error) throw error;
+      alert("Check your email for the login link!");
+    } catch (error) {
+      alert(error.error_description || error.message);
+    } finally {
+    }
+  };
+
   return (
     <div className="container" style={{ padding: "50px 0 100px 0" }}>
       <Head>
@@ -23,6 +37,9 @@ export default function Home() {
       <div className="brand">
         <div className="logo"></div>
         {/* <h1 className="header">Portal</h1> */}
+        <button className="admin-button" onClick={() => handleAdminLogin()}>
+          Admin Portal
+        </button>
       </div>
       {!session ? (
         <>

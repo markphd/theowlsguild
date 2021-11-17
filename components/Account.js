@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "../utils/supabaseClient";
 import Store from "store";
 import Scholar from "./Scholar";
+import players from "../data/players.json";
 
 export default function Account({ session }) {
   const [loading, setLoading] = useState(true);
@@ -24,46 +25,6 @@ export default function Account({ session }) {
   //   "Pain is temporary. It may last a minute, or an hour, or a day, or a year, but eventually it will subside and something else will take its place. If I quit however, it lasts forever. -Lance Armstrong",
   // ];
 
-  const scholars = {
-    players: [
-      {
-        name: "dan",
-        address: "0x436c6c586034ba8b070373c9da5873df3ccde9db",
-        alias: "Powerful Owl",
-      },
-      {
-        name: "rodel",
-        address: "0x524de36943a744431d17b816151710793ae4b7ee",
-        alias: "Great Horned Owl",
-      },
-      {
-        name: "ryan",
-        address: "0x0300435252c760e1410d0616bd1f5252147abc38",
-        alias: "Great Grey Owl",
-      },
-      {
-        name: "ellice",
-        address: "0x4feb4da58271cb0131fcc66aacb67716c430a1b7",
-        alias: "Elf Owl",
-      },
-      {
-        name: "bj",
-        address: "0x8f8b368660c1b5a496387bafaf88d49ee30d3826",
-        alias: "Brown Wood Owl",
-      },
-      {
-        name: "rica",
-        address: "0x8e4f19f3792315636d5a15a880043498698f6fb5",
-        alias: "Rock Eagle Owl",
-      },
-      {
-        name: "anthony",
-        address: "0x585b5ebc1629689903ad19287c929c75ef067528",
-        alias: "Austral Pygmy Owl",
-      },
-    ],
-  };
-
   useEffect(() => {
     if (Store.get("online") === undefined) {
       Store.set("online", playing);
@@ -75,8 +36,6 @@ export default function Account({ session }) {
     try {
       setLoading(true);
       const user = supabase.auth.user();
-
-      // console.log(user);
 
       let { data, error, status } = await supabase
         .from("profiles")
@@ -224,7 +183,7 @@ export default function Account({ session }) {
           </thead>
           <tbody>
             {!loading &&
-              scholars.players.map((player) => (
+              players.map((player) => (
                 <Scholar
                   name={player.name}
                   address={player.address}
