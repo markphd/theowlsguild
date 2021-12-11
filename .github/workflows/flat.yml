@@ -61,3 +61,23 @@ jobs:
         with:
           http_url: https://game-api.skymavis.com/game-api/clients/0x50f822bbd2b7b8af05d0a1de428f5dbabf04aa52/items/1
           downloaded_filename: jungle-owlet.json
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://game-api.skymavis.com/game-api/clients/0xe79e8651fdc0eb001aed5c951e4db78073502d3c/items/1
+          downloaded_filename: red-chested-owlet.json
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://game-api.skymavis.com/game-api/clients/0x125cfb72732b3119c6cb1cecb0f65cce8ba970ee/items/1
+          downloaded_filename: rufous-owl.json
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://game-api.skymavis.com/game-api/clients/0x1748eea0d4dbecc6c8f44cc5f575b9458556dbc2/items/1
+          downloaded_filename: palau-owl.json
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://game-api.skymavis.com/game-api/clients/0x6574053a1ea3d9fbfb498246ddba09c9944b3004/items/1
+          downloaded_filename: jamaican-owl.json
