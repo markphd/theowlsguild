@@ -63,6 +63,7 @@ tr {
 
 td {
   line-height: initial;
+  padding: 0;
   border: none;
 }
 
