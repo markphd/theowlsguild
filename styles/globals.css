@@ -25,6 +25,8 @@ body {
 
 th {
   color: #ffc433;
+  border: none;
+  padding: 1em 0;
 }
 
 .logo {

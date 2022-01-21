@@ -28,8 +28,9 @@ export default function Scholar(player) {
       .then(async (response) => {
         let txns = await response.json();
         let { results } = txns;
-        let txDate = moment.utc(results[0].timestamp * 1000).local().format("YYYY-MM-DD, h:mma");
-        if (results[0].token_symbol === "SLP"){
+
+        if (results[0]?.token_symbol === "SLP"){
+          let txDate = moment.utc(results[0].timestamp * 1000).local().format("YYYY-MM-DD, h:mma");
           let value = results[0].value
           // console.log(txDate, "LAST CLAIM")
           setLastSlpClaim({timestamp: txDate, value: value})
