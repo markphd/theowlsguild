@@ -6,7 +6,7 @@ body {
 
 .brand {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -31,7 +31,7 @@ th {
 
 .logo {
   height: 7rem;
-  width: 100%;
+  width: 150px;
   margin-right: 1rem;
   background-image: url("/tog-logo.jpg");
   background-repeat: no-repeat;
@@ -55,7 +55,7 @@ th {
 
 tr {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 3fr 1fr 1fr;
   width: 100%;
   align-items: center;
   border-bottom: 1px solid #ccc;
