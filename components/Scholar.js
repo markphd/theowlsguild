@@ -3,6 +3,7 @@ import moment from "moment";
 
 export default function Scholar(player) {
   const [stats, setStats] = useState(null);
+  const [mmr, setMMR] = useState(null);
   const [lastSlpClaim, setLastSlpClaim] = useState(null);
 
   useEffect(() => {
@@ -25,29 +26,14 @@ export default function Scholar(player) {
         console.error(err);
       });
 
-    // fetch(
-    //   `https://explorer.roninchain.com/api/tokentxs?addr=${player.address}&from=0&size=10&token=ERC20`,
-    //   {
-    //     mode: "cors",
-    //   }
-    // ).then(async (response) => {
-    //   let txns = await response.json();
-    //   // let { results } = txns;
-
-    //   // if (results[0]?.token_symbol === "SLP") {
-    //   //   let txDate = moment
-    //   //     .utc(results[0].timestamp * 1000)
-    //   //     .local()
-    //   //     .format("YYYY-MM-DD, h:mma");
-    //   //   let value = results[0].value;
-    //   //   // console.log(txDate, "LAST CLAIM")
-    //   //   setLastSlpClaim({ timestamp: txDate, value: value });
-    //   // } else {
-    //   //   setLastSlpClaim("N/A");
-    //   // }
-    //   console.log(txns);
-    //   // console.log(results[0].value, "TRANSACTION");
-    // });
+    fetch(`https://game-api.axie.technology/api/v1/${player.address}`).then(
+      async (response) => {
+        let txns = await response.json();
+        setMMR(txns.mmr);
+        console.log(txns);
+        // console.log(results[0].value, "TRANSACTION");
+      }
+    );
   }, [player.address]);
 
   return (
@@ -64,7 +50,7 @@ export default function Scholar(player) {
       {/* <td className="timestamp">{lastSlpClaim?.timestamp}</td> */}
       {/* <td className="total">{lastSlpClaim?.value} SLP</td> */}
       <td className="total">{stats?.total} SLP</td>
-      <td className="timestamp">{stats?.days}</td>
+      <td className="timestamp">{mmr}</td>
     </tr>
   );
 }

@@ -11,7 +11,7 @@ export default function Home() {
         <title>The Owls Guild — Home</title>
       </Head>
       <div className="brand">
-        <h1>Leaderboard</h1>
+        <h1>Scoreboard</h1>
         <div className="logo"></div>
       </div>
       <Account />

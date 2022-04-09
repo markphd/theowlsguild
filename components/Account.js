@@ -15,10 +15,8 @@ export default function Account({ session }) {
         <thead>
           <tr>
             <th colSpan="1">Team</th>
-            {/* <th colSpan="1">Last Claim Date</th>
-            <th colSpan="1">Last Claimed SLP</th> */}
             <th colSpan="1">Total SLP</th>
-            <th colSpan="1">Next Claim Date</th>
+            <th colSpan="1">MMR</th>
           </tr>
         </thead>
         <tbody>
